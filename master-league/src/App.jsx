@@ -8,6 +8,9 @@ import Teams from './components/teams.jsx'
 import Navbar from './components/navbar.jsx'
 import Login from './components/login.jsx'
 import Signup from './components/signup.jsx'
+import FormationPage from './components/FormationPage.jsx'
+import Pitch from './components/pitch.jsx'
+import Profile from './components/profile.jsx'
 function App() {
  
 
@@ -25,7 +28,9 @@ function App() {
         <Route path="/login" element={<Login/>}/>
         <Route path="/signup" element={<Signup/>}/>
         <Route path='/' element={<Signup/>}></Route>
-
+        <Route path="/formation" element={<FormationPage/>}/>
+        <Route path='/pitch' element={<Pitch/>}/>
+        <Route path='/profile' element={<Profile/>}/>
       </Routes>
     </>
 
