@@ -1,7 +1,7 @@
 // Players.jsx
 import { useEffect, useState } from "react";
 import axios from "axios";
-import PlayerCard from "./PlayerCard";
+import PlayerCard from "./playerCard";
 
 function Players() {
   const [players, setPlayers] = useState([]);
