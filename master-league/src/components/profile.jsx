@@ -1,15 +1,13 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
-
+import api from "../api";
 function Profile() {
   const [user, setUser] = useState(null);
 
   useEffect(() => {
     const fetchUser = async () => {
       try {
-        const res = await axios.get("http://localhost:5000/api/auth/profile", {
-          withCredentials: true, // if you’re using cookies/sessions
-        });
+        const res = await api.get("/auth/profile");
         setUser(res.data);
       } catch (error) {
         console.error("Error fetching user data:", error);

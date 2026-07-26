@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-
+import api from "../api"; 
 function Signup() {
   const navigate = useNavigate();
   const [form, setForm] = useState({
@@ -18,7 +18,7 @@ function Signup() {
     setLoading(true);
     setError("");
     try {
-      await axios.post("http://localhost:5000/api/auth/signup", form);
+      const res = await api.post("/auth/signup", form);
       alert("Account Created Successfully");
       navigate('/login');
       setForm({ username: "", email: "", password: "", role: "player" });

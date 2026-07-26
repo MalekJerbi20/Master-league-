@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import PlayerCard from "./playerCard"; // reuse your existing card
+import api from "../api"; 
 
 function TeamGenerator() {
   const [players, setPlayers] = useState([]);
@@ -13,7 +14,7 @@ function TeamGenerator() {
   useEffect(() => {
     const fetchPlayers = async () => {
       try {
-        const res = await axios.get("http://localhost:5000/api/players");
+        const res = await api.get("/players");
         setPlayers(res.data);
       } catch (error) {
         console.error("Error fetching players:", error);

@@ -2,6 +2,7 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import PlayerCard from "./playerCard";
+import api from "../api";
 
 function Players() {
   const [players, setPlayers] = useState([]);
@@ -10,7 +11,8 @@ function Players() {
   useEffect(() => {
     const fetchPlayers = async () => {
       try {
-        const res = await axios.get("http://localhost:5000/api/players");
+      const res = await api.get("/players");
+        //const res = await axios.get("http://localhost:5000/api/players");
         setPlayers(res.data);
       } catch (error) {
         console.error("Error fetching players:", error);
