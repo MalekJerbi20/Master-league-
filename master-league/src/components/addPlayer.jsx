@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import PlayerCard from "./playerCard"; 
-import api from "../api";
+import api from "../"
 function AddPlayer() {
   const [players, setPlayers] = useState([]);
   const [loading, setLoading] = useState(false);
@@ -26,7 +26,6 @@ function AddPlayer() {
     const fetchPlayers = async () => {
       try {
        const res = await api.get("/players"); 
-        //const res = await axios.get("http://localhost:5000/api/players");
         setPlayers(res.data);
       } catch (error) {
         console.error("Error fetching players:", error);
