@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import PlayerCard from "./playerCard"; 
-import api from "../"
+import api from "../api"
 function AddPlayer() {
   const [players, setPlayers] = useState([]);
   const [loading, setLoading] = useState(false);
