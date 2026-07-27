@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import SoccerPitch from "../components/pitch.jsx";
+import api from "../api"
 
 function FormationPage() {
   const [players, setPlayers] = useState([]);
