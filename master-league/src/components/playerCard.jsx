@@ -39,7 +39,7 @@ function PlayerCard({ player }) {
           <img
             src={
               player?.imageUrl
-                ? `${import.meta.env.VITE_API_URL.replace("/api", "")}${player.imageUrl}`
+                ? `${import.meta.env.VITE_API_BASE.replace("/api", "")}${player.imageUrl}`
                 : "/default-player.png"
             }
             alt={player?.name ?? "Unknown Player"}

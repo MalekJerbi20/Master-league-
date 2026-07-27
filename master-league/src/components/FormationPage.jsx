@@ -246,7 +246,7 @@ function FormationPage() {
                 >
                   <div className="relative">
                     <img
-                      src={`${import.meta.env.VITE_API_URL.replace("/api", "")}${p.imageUrl}`}
+                      src={`${import.meta.env.VITE_API_BASE.replace("/api", "")}${p.imageUrl}`}
                       alt={p.name}
                       className="w-20 h-20 rounded-full object-cover border-2 border-emerald-500/50 group-hover:border-emerald-400 shadow-lg group-hover:shadow-emerald-500/50 transition-all duration-300"
                     />
@@ -315,7 +315,7 @@ function FormationPage() {
                         <>
                           <div className="relative w-16 h-16 flex-shrink-0">
                             <img
-                              src={`${import.meta.env.VITE_API_URL.replace("/api", "")}${assignedPlayer.imageUrl}`}
+                              src={`${import.meta.env.VITE_API_BASE.replace("/api", "")}${assignedPlayer.imageUrl}`}
                               alt={assignedPlayer.name}
                               className="w-full h-full rounded-full object-cover border-3 border-white/95 shadow-md transition-all duration-300"
                             />
