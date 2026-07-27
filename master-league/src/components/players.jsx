@@ -12,7 +12,6 @@ function Players() {
     const fetchPlayers = async () => {
       try {
       const res = await api.get("/players");
-        //const res = await axios.get("http://localhost:5000/api/players");
         setPlayers(res.data);
       } catch (error) {
         console.error("Error fetching players:", error);
