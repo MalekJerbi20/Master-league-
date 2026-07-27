@@ -54,7 +54,7 @@ function AddPlayer() {
           data.append(key, value); // e.g. "shooting": 75
         });
 
-        const res = await axios.post("http://localhost:5000/api/players", data, {
+        const res = await api.post("/players", data, {
           headers: { "Content-Type": "multipart/form-data" },
         });
 

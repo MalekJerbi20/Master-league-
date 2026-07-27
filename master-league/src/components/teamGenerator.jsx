@@ -50,7 +50,7 @@ function TeamGenerator() {
 
   const saveTeam = async () => {
     try {
-      const res = await axios.post("http://localhost:5000/api/teams", {
+      const res = await api.post("/teams", {
         name: teamName || "Unnamed Team",
         teamA: teamA.map((p) => p._id),
         teamB: teamB.map((p) => p._id),

@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import PlayerCard from "./playerCard";
+import api from "../api";
 
 function TeamsPage() {
   const [teams, setTeams] = useState([]);
@@ -10,7 +11,7 @@ function TeamsPage() {
   useEffect(() => {
     const fetchTeams = async () => {
       try {
-        const res = await axios.get("http://localhost:5000/api/teams");
+        const res = await api.get("/teams");
         setTeams(res.data);
       } catch (error) {
         console.error("Error fetching teams:", error);
@@ -21,7 +22,7 @@ function TeamsPage() {
 
   const deleteTeam = async (id) => {
     try {
-      await axios.delete(`http://localhost:5000/api/teams/${id}`);
+      await api.delete(`/teams/${id}`);
       setTeams((prev) => prev.filter((team) => team._id !== id));
     } catch (error) {
       console.error("Error deleting team:", error);
@@ -35,7 +36,7 @@ function TeamsPage() {
 
   const saveEdit = async (id) => {
     try {
-      const res = await axios.put(`http://localhost:5000/api/teams/${id}`, {
+      const res = await api.put(`/teams/${id}`, {
         name: newName,
         teamA: teams.find((t) => t._id === id).teamA.map((p) => p._id),
         teamB: teams.find((t) => t._id === id).teamB.map((p) => p._id),

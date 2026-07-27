@@ -15,7 +15,6 @@ function Login () {
         setError("")
         try{
             const res = await api.post("/auth/login", formData)
-            //const res = await axios.post("http://localhost:5000/api/auth/login", formData)
             console.log("response from server", res.data)
             alert("Login Successful")
             navigate('/profile')
